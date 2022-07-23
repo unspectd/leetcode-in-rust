@@ -11,4 +11,5 @@ mod p0047_permutations_ii;
 mod p0077_combinations;
 mod p0078_subsets;
 mod p0090_subsets_ii;
+mod p0093_restore_ip_addresses;
 mod p0216_combination_sum_iii;
