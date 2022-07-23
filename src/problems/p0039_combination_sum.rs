@@ -2,6 +2,29 @@ pub struct Solution;
 
 impl Solution {
     pub fn combination_sum(mut candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
+        fn backtrack(
+            buffer: &mut Vec<i32>,
+            candidates: &[i32],
+            left: i32,
+            results: &mut Vec<Vec<i32>>,
+        ) {
+            if left == 0 {
+                results.push(buffer.clone());
+                return;
+            }
+
+            for i in 0..candidates.len() {
+                let cur = candidates[i];
+                if cur > left {
+                    return;
+                }
+
+                buffer.push(cur);
+                backtrack(buffer, &candidates[i..], left - cur, results);
+                buffer.pop();
+            }
+        }
+
         candidates.sort();
 
         let mut results = Vec::new();
@@ -9,24 +32,6 @@ impl Solution {
         backtrack(&mut buffer, &candidates, target, &mut results);
 
         results
-    }
-}
-
-fn backtrack(buffer: &mut Vec<i32>, candidates: &[i32], left: i32, results: &mut Vec<Vec<i32>>) {
-    if left == 0 {
-        results.push(buffer.clone());
-        return;
-    }
-
-    for i in 0..candidates.len() {
-        let cur = candidates[i];
-        if cur > left {
-            return;
-        }
-
-        buffer.push(cur);
-        backtrack(buffer, &candidates[i..], left - cur, results);
-        buffer.pop();
     }
 }
 
