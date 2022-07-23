@@ -9,8 +9,7 @@ impl Solution {
 
         let mut i = 0;
         while i < nums.len() - 2 && nums[i] <= 0 {
-            let mut lo = i + 1;
-            let mut hi = nums.len() - 1;
+            let (mut lo, mut hi) = (i + 1, nums.len() - 1);
 
             while lo < hi {
                 let sum = nums[i] + nums[lo] + nums[hi];
