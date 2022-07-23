@@ -1,0 +1,55 @@
+pub struct Solution;
+
+impl Solution {
+    pub fn subsets_with_dup(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+        fn backtrace(buffer: &mut Vec<i32>, candidates: &[i32], results: &mut Vec<Vec<i32>>) {
+            results.push(buffer.clone());
+
+            for i in 0..candidates.len() {
+                if i > 0 && candidates[i] == candidates[i - 1] {
+                    continue;
+                }
+
+                buffer.push(candidates[i]);
+                backtrace(buffer, &candidates[i + 1..], results);
+                buffer.pop();
+            }
+        }
+
+        nums.sort_unstable();
+        let mut results = Vec::new();
+        let mut buffer = Vec::with_capacity(nums.len());
+        backtrace(&mut buffer, &nums, &mut results);
+
+        results
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        // (nums, result)
+        struct TestCase(Vec<i32>, Vec<Vec<i32>>);
+        let test_cases = [
+            TestCase(
+                vec![1, 2, 2],
+                vec![
+                    vec![],
+                    vec![1],
+                    vec![1, 2],
+                    vec![1, 2, 2],
+                    vec![2],
+                    vec![2, 2],
+                ],
+            ),
+            TestCase(vec![0], vec![vec![], vec![0]]),
+        ];
+
+        for test_case in test_cases {
+            assert_eq!(Solution::subsets_with_dup(test_case.0), test_case.1);
+        }
+    }
+}

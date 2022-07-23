@@ -4,7 +4,7 @@ use std::cmp::Ordering;
 
 impl Solution {
     pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
-        nums.sort();
+        nums.sort_unstable();
         let mut result = Vec::new();
 
         let mut i = 0;

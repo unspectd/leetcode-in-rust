@@ -32,7 +32,7 @@ impl Solution {
             }
         }
 
-        candidates.sort();
+        candidates.sort_unstable();
 
         let mut results = Vec::new();
         let mut buffer = Vec::new();

@@ -26,7 +26,7 @@ impl Solution {
             }
         }
 
-        nums.sort();
+        nums.sort_unstable();
         let mut results = Vec::new();
         let mut buffer = Vec::with_capacity(nums.len());
         backtrack(&mut buffer, &mut nums.clone(), &mut results);
