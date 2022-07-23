@@ -6,3 +6,4 @@ mod p0031_next_permutation;
 mod p0035_search_insert_position;
 mod p0039_combination_sum;
 mod p0040_combination_sum_2;
+mod p0046_permutations;
