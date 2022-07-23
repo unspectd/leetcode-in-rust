@@ -1,7 +1,7 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         fn backtrack(
             buffer: &mut Vec<i32>,
             candidates: &mut Vec<i32>,
@@ -13,6 +13,10 @@ impl Solution {
             }
 
             for i in 0..candidates.len() {
+                if i > 0 && candidates[i] == candidates[i - 1] {
+                    continue;
+                }
+
                 let cur = candidates[i];
                 candidates.remove(i);
                 buffer.push(cur);
@@ -22,9 +26,8 @@ impl Solution {
             }
         }
 
-        // factorial capacity
-        let cap = (1..=nums.len()).into_iter().fold(1, |a, b| a * b);
-        let mut results = Vec::with_capacity(cap);
+        nums.sort();
+        let mut results = Vec::new();
         let mut buffer = Vec::with_capacity(nums.len());
         backtrack(&mut buffer, &mut nums.clone(), &mut results);
 
@@ -42,6 +45,14 @@ mod tests {
         struct TestCase(Vec<i32>, Vec<Vec<i32>>);
         let test_cases = [
             TestCase(
+                vec![1, 1, 2],
+                vec![vec![1, 1, 2], vec![1, 2, 1], vec![2, 1, 1]],
+            ),
+            TestCase(
+                vec![1, 2, 1],
+                vec![vec![1, 1, 2], vec![1, 2, 1], vec![2, 1, 1]],
+            ),
+            TestCase(
                 vec![1, 2, 3],
                 vec![
                     vec![1, 2, 3],
@@ -52,12 +63,10 @@ mod tests {
                     vec![3, 2, 1],
                 ],
             ),
-            TestCase(vec![0, 1], vec![vec![0, 1], vec![1, 0]]),
-            TestCase(vec![1], vec![vec![1]]),
         ];
 
         for test_case in test_cases {
-            assert_eq!(Solution::permute(test_case.0), test_case.1);
+            assert_eq!(Solution::permute_unique(test_case.0), test_case.1);
         }
     }
 }
