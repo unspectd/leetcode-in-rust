@@ -13,6 +13,7 @@ mod p0046_permutations;
 mod p0047_permutations_2;
 mod p0055_jump_game;
 mod p0062_unique_paths;
+mod p0063_unique_paths_2;
 mod p0077_combinations;
 mod p0078_subsets;
 mod p0090_subsets_2;
