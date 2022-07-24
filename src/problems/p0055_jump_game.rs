@@ -1,7 +1,5 @@
 pub struct Solution;
 
-use std::cmp::max;
-
 impl Solution {
     pub fn can_jump(nums: Vec<i32>) -> bool {
         let mut max_reachable = 0;
@@ -9,7 +7,7 @@ impl Solution {
             if i > max_reachable {
                 break;
             }
-            max_reachable = max(max_reachable, i + nums[i] as usize);
+            max_reachable = max_reachable.max(i + nums[i] as usize);
         }
 
         max_reachable >= nums.len() - 1

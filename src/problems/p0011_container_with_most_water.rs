@@ -1,15 +1,13 @@
 pub struct Solution;
 
-use std::cmp::{max, min};
-
 impl Solution {
     pub fn max_area(heights: Vec<i32>) -> i32 {
         let mut max_area = 0;
         let (mut left, mut right) = (0, heights.len() - 1);
 
         while left < right {
-            let height = min(heights[left], heights[right]);
-            max_area = max(max_area, height * (right - left) as i32);
+            let height = heights[left].min(heights[right]);
+            max_area = max_area.max(height * (right - left) as i32);
 
             while left < right && heights[left] <= height {
                 left += 1

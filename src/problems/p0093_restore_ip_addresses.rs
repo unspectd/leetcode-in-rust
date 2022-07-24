@@ -1,7 +1,5 @@
 pub struct Solution;
 
-use std::cmp::min;
-
 // todo: add memoization someday
 impl Solution {
     pub fn restore_ip_addresses(s: String) -> Vec<String> {
@@ -32,7 +30,7 @@ impl Solution {
                 return;
             }
 
-            let lengths = (1..=min(3, str.len() - start))
+            let lengths = (1..=3.min(str.len() - start))
                 .into_iter()
                 .filter(|len| is_valid(&str[start..start + len]));
             for len in lengths {
