@@ -1,4 +1,5 @@
 mod p0001_two_sum;
+mod p0005_longest_palindromic_substring;
 mod p0011_container_with_most_water;
 mod p0015_3sum;
 mod p0017_letter_combinations_of_a_phone_number;

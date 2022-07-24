@@ -2,6 +2,7 @@ pub struct Solution;
 
 use std::cmp::min;
 
+// todo: add memoization someday
 impl Solution {
     pub fn restore_ip_addresses(s: String) -> Vec<String> {
         fn is_valid(s: &str) -> bool {
