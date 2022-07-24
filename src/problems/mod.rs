@@ -3,6 +3,7 @@ mod p0005_longest_palindromic_substring;
 mod p0011_container_with_most_water;
 mod p0015_3sum;
 mod p0017_letter_combinations_of_a_phone_number;
+mod p0022_generate_parentheses;
 mod p0031_next_permutation;
 mod p0035_search_insert_position;
 mod p0039_combination_sum;
