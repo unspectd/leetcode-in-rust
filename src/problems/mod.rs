@@ -8,6 +8,7 @@ mod p0031_next_permutation;
 mod p0035_search_insert_position;
 mod p0039_combination_sum;
 mod p0040_combination_sum_2;
+mod p0045_jump_game_2;
 mod p0046_permutations;
 mod p0047_permutations_2;
 mod p0055_jump_game;
