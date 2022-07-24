@@ -20,5 +20,6 @@ mod p0077_combinations;
 mod p0078_subsets;
 mod p0090_subsets_2;
 mod p0093_restore_ip_addresses;
+mod p0118_pascals_triangle;
 mod p0216_combination_sum_3;
 mod p1306_jump_game_3;
