@@ -26,5 +26,6 @@ mod p0119_pascals_triangle_2;
 mod p0120_triangle;
 mod p0121_best_time_to_buy_and_sell_stock;
 mod p0122_best_time_to_buy_and_sell_stock_2;
+mod p0123_best_time_to_buy_and_sell_stock_3;
 mod p0216_combination_sum_3;
 mod p1306_jump_game_3;

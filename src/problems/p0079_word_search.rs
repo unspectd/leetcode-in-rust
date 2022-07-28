@@ -4,14 +4,14 @@ const DIRECTIONS: [(usize, usize); 4] = [(0, 1), (1, 0), (0, !0), (!0, 0)];
 
 impl Solution {
     pub fn exist(mut board: Vec<Vec<char>>, word: String) -> bool {
-        let (mut n, mut m) = (board.len(), board[0].len());
+        let (n, m) = (board.len(), board[0].len());
 
         fn dfs(x: usize, y: usize, board: &mut Vec<Vec<char>>, target: &[char]) -> bool {
             if target.len() == 0 {
                 return true;
             }
 
-            let (mut n, mut m) = (board.len(), board[0].len());
+            let (n, m) = (board.len(), board[0].len());
             if x >= n || y >= m {
                 return false;
             }
