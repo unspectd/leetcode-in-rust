@@ -6,7 +6,8 @@ impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
         let (mut start, mut max_length) = (0, 0);
         let mut seen = HashMap::new();
-        for (idx, ch) in s.chars().enumerate() {
+
+        for (idx, ch) in s.into_bytes().into_iter().enumerate() {
             if let Some(last_seen) = seen.insert(ch, idx) {
                 start = start.max(last_seen + 1);
             }

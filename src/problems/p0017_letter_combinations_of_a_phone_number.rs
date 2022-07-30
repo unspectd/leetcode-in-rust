@@ -15,15 +15,15 @@ impl Solution {
     ];
 
     pub fn letter_combinations(digits: String) -> Vec<String> {
-        fn backtrack(buffer: &mut String, digits: &str, results: &mut Vec<String>) {
+        fn backtrack(buffer: &mut Vec<u8>, digits: &[u8], results: &mut Vec<String>) {
             if digits.is_empty() {
-                results.push(buffer.clone());
+                results.push(String::from_utf8(buffer.clone()).unwrap());
                 return;
             }
 
-            let idx: usize = (digits.chars().nth(0).unwrap() as u8 - b'2') as usize;
+            let idx: usize = (digits[0] - b'2') as usize;
             for ch in Solution::MAPPING[idx].clone() {
-                buffer.push(ch as char);
+                buffer.push(ch);
                 backtrack(buffer, &digits[1..], results);
                 buffer.pop();
             }
@@ -32,8 +32,8 @@ impl Solution {
         let mut results = Vec::new();
 
         if !digits.is_empty() {
-            let mut buffer = String::with_capacity(digits.len());
-            backtrack(&mut buffer, digits.as_str(), &mut results);
+            let mut buffer = Vec::with_capacity(digits.len());
+            backtrack(&mut buffer, digits.as_bytes(), &mut results);
         }
 
         results
