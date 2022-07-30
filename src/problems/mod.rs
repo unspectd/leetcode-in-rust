@@ -12,6 +12,7 @@ mod p0040_combination_sum_2;
 mod p0045_jump_game_2;
 mod p0046_permutations;
 mod p0047_permutations_2;
+mod p0049_group_anagrams;
 mod p0055_jump_game;
 mod p0062_unique_paths;
 mod p0063_unique_paths_2;
