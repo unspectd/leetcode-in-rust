@@ -21,6 +21,7 @@ mod p0070_climbing_stairs;
 mod p0077_combinations;
 mod p0078_subsets;
 mod p0079_word_search;
+mod p0083_remove_duplicates_from_sorted_list;
 mod p0090_subsets_2;
 mod p0093_restore_ip_addresses;
 mod p0118_pascals_triangle;
