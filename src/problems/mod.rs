@@ -2,6 +2,7 @@ mod p0001_two_sum;
 mod p0003_longest_substring_without_repeating_characters;
 mod p0005_longest_palindromic_substring;
 mod p0011_container_with_most_water;
+mod p0014_longest_common_prefix;
 mod p0015_3sum;
 mod p0017_letter_combinations_of_a_phone_number;
 mod p0022_generate_parentheses;
