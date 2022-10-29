@@ -33,4 +33,5 @@ mod p0123_best_time_to_buy_and_sell_stock_3;
 mod p0131_palindrome_partitioning;
 mod p0205_isomorphic_strings;
 mod p0216_combination_sum_3;
+mod p0217_contains_duplicate;
 mod p1306_jump_game_3;
